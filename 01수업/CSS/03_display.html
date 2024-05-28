@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        block 요소
+            좌우 전체 너비를 가진다
+            -> 새로운 줄에 표시
+            너비가 전체 크기보다 작을 경우 나머지 공간에 정렬 가능
+        */
+        .block{
+            width: 200px;
+            border: 1px solid red;
+            margin: 0 auto;     /*width 값이 없으면 가운데 정렬 불가*/
+        }
+
+        /*
+        inline 요소
+            내 컨텐츠만큼의 너비를 가진다
+            width, height, margin-top, margin-bottom 적용 안 됨
+            padding 좌우 적용되지만 위아래는 적용 안 됨. (단, border는 밀어짐)
+            inline 요소 안에 block 요소 넣기 불가
+        */
+        .inline{
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            /* padding: 30px; */
+        }
+        .bg_blue{
+            background-color: blue;
+            color: white;
+        }
+        
+        /*
+        inline-block 요소
+            inline과 block의 장점을 합침
+        */
+        .parent{
+            width: 500px;
+            border: 1px dotted #ff00ff;
+        }
+        .parent > div{
+            border: 1px dotted rgb(0, 0, 255);
+            width: 400px;
+            height: 200px;
+
+            display: inline-block;
+
+            vertical-align: top;    /*inline, inline-block에만 적용*/
+        }
+        #list2{
+            height: 500px;
+        }
+        #list1{
+            /* display none : 보이지 않게 함, 공간도 존재하지 않음, 소스엔 여전히 존재, 의미가 있음 */
+            /* display: none;  */
+
+            /*visiblity hidden : 보이지 않게 함, 다만 공간은 존재*/
+            /* visibility: hidden;*/
+
+            opacity: 1;
+        }
+        #list1:hover{
+            background-color: red;
+
+            /*opacity : 투명도 조절, 0일 시 보이지 않음(visiblity hidden과 비슷)*/
+            opacity: 0.3;
+        }
+        .fake_div{
+            border: 1px solid red;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <p class="block">
+        첫번째 p
+    </p>
+    <p class="block">
+        두번째 p
+    </p>
+
+    <a href="#a" class="inline">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto itaque harum eius dolorum distinctio, libero eaque, aspernatur, assumenda inventore necessitatibus quam qui animi nam amet aperiam atque! Autem, numquam veritatis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nesciunt vero maxime fugiat, laborum magnam, a maiores itaque commodi possimus, expedita impedit atque sed obcaecati consequuntur assumenda exercitationem? Voluptas, quae!
+    </a>
+    <a href="#a" class="inline">
+        두번째 a
+    </a> <br>
+
+    <!-- 공백이 있기 때문에 조금 간격이 생김 -->    
+    <span class="bg_blue">첫번째 span</span>    
+    <span class="bg_blue">두번째 span</span><br>
+    <!-- 공백이 없기 때문에 간격이 없음 -->
+    <span class="bg_blue">첫번째 span</span><span class="bg_blue">두번째 span</span>    
+    
+    <hr>
+
+    <div class="parent">
+        <div id="list1">목록1</div>
+        <div id="list2">
+            목록2<br>   <!-- 가장 마지막 줄에 맞춤 => 틀어짐 -->
+            목록2에 대한 설명
+        </div>
+    </div>
+
+    <div class="fake_div">div이었던거</div>
+    <div class="fake_div">div이었던거</div>
+</body>
+</html>

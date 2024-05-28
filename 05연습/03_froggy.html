@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개굴개굴 개구리</title>
+    <style>
+        *{
+            margin: 0;
+            font-size: 0;
+        }
+        div.wrap{
+            width: 650px;
+            height: 650px;
+            /* border: 1px solid red; */
+            margin: 50px auto;
+            position: relative;
+        }
+        .wrap .back{
+            padding: 16px;
+            background: #1F5768;
+            box-sizing: border-box;
+            border-radius: 10px;
+            width: 650px;
+            height: 650px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -10;
+        }
+
+        .wrap-frog, .wrap-pad{
+            /* 
+                forg 레이어와 pad 레이어 분리
+                각 요소들은 relative로 위치 조정 
+            */
+            width: 620px;
+            height: 620px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: translate(-50% -50%);
+        }
+
+        .wrap-pad{
+            z-index: -1;
+        }
+        
+        
+        .wrap-frog .frog.green .animate{
+            animation-name: bounce;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        .wrap-frog .frog.yellow .animate{
+            animation-name: bounce;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            /* delay를 소수점으로 하면 약간 순차적으로 움직이는 느낌 낼 수 있음 */
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+        }
+        .wrap-frog .frog.red .animate{
+            animation-name: bounce;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.6s;
+            animation-fill-mode: both;
+        }
+        /* hover 상태 유지 어떻게 하지... */
+
+        .wrap-frog .frog .animate:hover{
+            animation-iteration-count: 1;
+        }
+
+        @keyframes bounce{
+            0%, 100%, 53%, 80%, 20% {
+                transform: translate(0, 0);
+                animation-timing-function: cubic-bezier(0.32, 1.06, 0.39, 1.11);
+            }
+            40%, 43% {
+                transform: translate(0, -30px);
+                animation-timing-function: cubic-bezier(0.75, 0.01, 1, 0.1);
+            }
+            70%{
+                transform: translate(0, -15px);
+                animation-timing-function: cubic-bezier(0.75, 0.01, 1, 0.1);
+            }
+            90%{
+                transform: translate(0, -6px);
+            }
+        }
+
+        .wrap-frog .frog, 
+        .wrap-pad .pad{
+            /* border: 1px solid red; */
+            width: 20%;
+            height: 20%;
+            position: relative;
+            display: inline-block;
+        }
+        .wrap-frog .frog > .bg, 
+        .wrap-pad .pad > .bg{
+            width:100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;  /* 배경이미지 가운데 정렬 */
+        }
+
+        .wrap-frog .frog.green > .bg{
+            background-image: url(https://flexboxfroggy.com/images/frog-green.svg);
+            background-size: 55% 55%;
+    
+        }
+        .wrap-frog .frog.yellow > .bg{
+            background-image: url(https://flexboxfroggy.com/images/frog-yellow.svg);
+            background-size: 55% 55%;
+        }
+        .wrap-frog .frog.red > .bg{
+            background-image: url(https://flexboxfroggy.com/images/frog-red.svg);
+            background-size: 55% 55%;
+        }
+
+        .wrap-pad .pad.green > .bg{
+            background-image: url(https://flexboxfroggy.com/images/lilypad-green.svg);
+            background-size: 80% 80%;
+        }
+        .wrap-pad .pad.yellow > .bg{
+            background-image: url(https://flexboxfroggy.com/images/lilypad-yellow.svg);
+            background-size: 80% 80%;
+        }
+        .wrap-pad .pad.red > .bg{
+            background-image: url(https://flexboxfroggy.com/images/lilypad-red.svg);
+            background-size: 80% 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="back"> </div>
+
+        <div class="wrap-frog">
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog yellow">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog red">
+                <div class="bg animate"></div>
+            </div>
+            <div class="frog green">
+                <div class="bg animate"></div>
+            </div>
+        </div>
+
+        <div class="wrap-pad">
+            <!-- transform: rotate( deg) -> pad 각도 조절 -->
+            <div class="pad green" style="transform: rotate(120deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(20deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(290deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(80deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(130deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(350deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(120deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(180deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(20deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(250deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(20deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(290deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(120deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(190deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(80deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(330deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(190deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(80deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(240deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(30deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(80deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(220deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad yellow" style="transform: rotate(80deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad red" style="transform: rotate(190deg);">
+                <div class="bg"></div>
+            </div>
+            <div class="pad green" style="transform: rotate(330deg);">
+                <div class="bg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

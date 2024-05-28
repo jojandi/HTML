@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            /* border: 1px solid blue; */
+
+            width: 1000px;
+            margin: 50px auto;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .margin_{
+            color: white;
+        }
+        
+        .wrap .right{
+            text-align: right;
+        }
+        
+        .wrap .f-right{
+            float: right;
+        }
+        
+        .wrap .margin-tb{
+            margin: 10px 0;
+        }
+        
+        .wrap span.fs{
+            font-size: 14px;
+        }
+        
+        .search{
+            font-size: 0;
+        }
+        input[type=submit]{
+            background: #03c75a;
+            color: white;
+            width: 50px;
+            height: 32px;
+            border-radius: 0;
+            border: 1px solid #03c75a;
+            /* submit은 vertical-align 안 먹는듯 */
+            /* vertical-align: bottom; */
+        }
+        input[type=text]{
+            height: 28px;
+            vertical-align: top;
+            border-radius: 0;
+            border: 1px solid gray;
+        }
+
+        input[type=button]{
+            padding: 5px 10px;
+            font-size: 12px;
+            background: white;
+            border: 1px solid gray;
+        }
+
+        
+
+        div h1{
+            display: inline-block;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .wrap .sel{
+            margin: 0 5px;
+        }
+
+
+
+        table{
+            margin: 0 auto;
+            width: 1000px;
+            height: 250px;
+            /* 줄간격 없게 */
+            border-collapse: collapse; 
+            font-size: 13px;
+        }
+        table td.center{
+            text-align: center;
+        }
+        table td{
+            border-bottom: 1px solid lightgray;
+        }
+        table .border-t{
+            border-top: 1px solid gray;
+            height: 50px;
+        }
+        
+
+        .center-a{
+            text-align: center;
+            margin: 15px 0;
+        }
+        .center-a a{
+            margin: 0 10px;
+            font-size: 13px;
+            text-decoration: none;
+            text-decoration: none;color: black;
+        }
+
+
+
+        .box{
+            height: 30px;
+            width: 130px;
+        }
+        .search_ib{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="right margin-tb search">
+            <input type="text">
+            <input type="submit" value="검색">
+        </div>
+
+        <div class="clearfix margin-tb">
+            <h1>생산관리 프로그래밍기초 C#(과제제출)</h1>
+            <div class="f-right">
+                <input type="button" value="게시판 분석">
+            </div>
+        </div>
+
+        <div class="clearfix margin-tb">
+            <div class="f-right">
+                <span class="sel">
+                    <span class="fs">새글 구독</span><input type="checkbox">
+                </span>
+                <span class="sel">
+                    <input type="checkbox" value=""><span class="fs">공지 숨기기</span>
+                </span>
+                <select class="sel">
+                    <option value="1" selected>5개씩</option>
+                    <option value="2">10개씩</option>
+                    <option value="3">15개씩</option>
+                    <option value="4">20개씩</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <table>
+                <tr class="border-t">
+                    <td> </td>
+                    <td> </td>
+                    <td class="center">제목</td>
+                    <td class="center">작성자</td>
+                    <td class="center">작성일</td>
+                    <td class="center">조회</td>
+                    <td class="center">좋아요</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>392</td>
+                    <td>09. 생산관리 프로그래밍기초C#(과제제출)-유상준</td>
+                    <td class="center">유상준</td>
+                    <td class="center">2024.04.16.</td>
+                    <td class="center">1</td>
+                    <td class="center">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>391</td>
+                    <td>생산관리 프로그래밍기초C#(과제제출) - 임우혁</td>
+                    <td class="center">임우혁</td>
+                    <td class="center">2024.04.16.</td>
+                    <td class="center">1</td>
+                    <td class="center">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>392</td>
+                    <td>생산관리 프로그래밍기초C#(과제제출) - 송우석</td>
+                    <td class="center">송우석</td>
+                    <td class="center">2024.04.16.</td>
+                    <td class="center">1</td>
+                    <td class="center">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>392</td>
+                    <td>생산관리 프로그래밍기초C#(과제제출) - 이민영</td>
+                    <td class="center">이민영</td>
+                    <td class="center">2024.04.15.</td>
+                    <td class="center">2</td>
+                    <td class="center">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>392</td>
+                    <td>생산관리 프로그래밍기초C#(과제제출) - 허재영</td>
+                    <td class="center">허재영</td>
+                    <td class="center">2024.04.09.</td>
+                    <td class="center">2</td>
+                    <td class="center">0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="clearfix margin-tb">
+            <input type="checkbox" value=""><span class="fs">전체선택</span>
+            <div class="f-right">
+                <input type="button" value="이동">
+                <input type="button" value="삭제">
+                <input type="button" value="글쓰기">
+            </div>
+        </div>
+
+        <div class="center-a">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </div>
+
+        <!-- margin병합 없애기 -->
+        <span class="margin_">.</span>
+
+        <div class="center-a">
+            <select class="box">
+                <option value="1" selected>전체기간</option>
+                <option value="2">1일</option>
+                <option value="3">1주</option>
+                <option value="4">1개월</option>
+            </select>
+
+            <select class="box">
+                <option value="1" selected>게시글 + 댓글</option>
+                <option value="2">제목만</option>
+                <option value="3">글작성자</option>
+                <option value="4">댓글내용</option>
+                <option value="5">댓글작성자</option>
+            </select>
+
+            <div class="search search_ib">
+                <input type="text" placeholder="검색어를 입력해주세요.">
+                <input type="submit" value="검색">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

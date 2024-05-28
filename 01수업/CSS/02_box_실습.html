@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img.thumd{    /*이미지 크기*/
+            width: 120px;
+            border-radius:10px;
+            border: 2px solid lightgray;
+        }
+        .thumd:hover{   /*마우스를 올렸을 때 이미지가 커짐*/
+            width: 125px;
+        }
+        td.star{    /*별점 크키*/
+            color: gray;
+            font-size: 13px;
+        }
+        td.wirter{    /*작가 이름 크기*/
+            font-size: 14px;
+            /* height: 50px; */
+        }
+        td.a{   /*왼쪽 오른쪽 간격*/
+            padding-right: 100px;
+        }
+        td span{    /*UP*/
+            color: red;
+            border: 1px solid red;
+            border-radius: 3px;
+            font-size: 10px;
+            margin: 0 4px;
+            padding: 1px 2px;
+        }
+        strong.up::before{
+            content: "UP";
+            color: red;
+            border: 1px solid red;
+            border-radius: 3px;
+            font-size: 10px;
+            margin: 0 4px;
+            padding: 1px 2px;
+        }
+        /* td.title{
+            height: 20px;
+        } */
+        table{
+            border-collapse: collapse;  /*-> table이 서로 붙음(경계가 없어짐)*/
+        }
+        table,td{
+            border-right: 1px solid red;
+        }
+        .blank{     /*제목, 작가 이름 가깝게*/
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td rowspan="4">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2023/10/09/370449/upload_7077467705797915957_202x164.jpeg">
+            </td>
+            <td class="title a">
+                <span>UP</span><strong class="up">미로에 빠진 사랑</strong>
+            </td>
+            <td rowspan="4">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2023/06/04/230622/upload_3618133662164465766_202x164.jpeg">
+            </td>
+            <td class="title a">
+                <span>UP</span><strong>로마의 법칙</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="wirter a">배결준</td>
+            <!-- <td>2</td> -->
+            <td class="wirter a">늘보</td>
+        </tr>
+
+        <tr>
+            <!-- <td>.</td> -->
+            <td class="blank"></td>
+            <!-- <td>.</td> -->
+            <td class="blank"></td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="star a">★9.78</td>
+            <!-- <td>1</td> -->
+            <td class="star a">★9.88</td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="3">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2024/05/13/141755/upload_7377796922527332657_202x164.jpeg">
+            </td>
+            <td class="title a">
+                <span>UP</span><strong>야오네집</strong>
+            </td>
+            <td rowspan="3">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2023/03/12/324739/upload_4051322353419891513_202x164.jpeg">
+            </td>
+            <td class="title a">
+                <span>UP</span><strong>158동 진상부부</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="wirter a">YAO</td>
+            <!-- <td>1</td> -->
+            <td class="wirter a">진상부부</td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="star a">★9.78</td>
+            <!-- <td>1</td> -->
+            <td class="star a">★9.54</td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="3">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2022/05/18/303129/thumbnail_202x164dfee8ef3_6719_4892_8662_07d1a02bedb6_00004208.JPEG">
+            </td>
+            <td class="title a"><strong>단편집</strong></td>
+            <td rowspan="3">
+                <img class="thumd" src="https://image-comic.pstatic.net/user_contents_data/challenge_comic/2021/05/16/233067/thumbnail_202x164d0bd834f_ab57_4772_8457_ccadc2b72505_00005203.JPEG">
+            </td class="title a">
+            <td><strong>상상동물</strong></td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="wirter a">mrle****</td>
+            <!-- <td>1</td> -->
+            <td class="wirter a">da2g****</td>
+        </tr>
+
+        <tr>
+            <!-- <td>1</td> -->
+            <td class="star a">★9.03</td>
+            <!-- <td>1</td> -->
+            <td class="star a">★8.91</td>
+        </tr>
+    </table>
+</body>
+</html>

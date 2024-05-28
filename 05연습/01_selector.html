@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{color:red;}   /*tag*/
+        #p{color:blue;}    /*id*/ 
+        .p{color:green;}    /*class*/
+        p[title]{color:black; background-color:pink;}   /*속성*/
+        [id^=a]{color:black; background-color:yellow;}  /*앞이 같은 것들*/
+        div a{color:black; background-color:lime;}    /*부모*/
+        div #p1{color:black; background-color:lime;}
+        /* #mouse+#p1{border: 1px solid red;} */
+        #mouse{background-color:white;}
+        #mouse:hover{background-color:pink; border: 1px solid red;}    /*마우스를 올렸을 때*/
+        [type="checkbox"]:checked+span{color:red;}    /*선택됐을 때*/
+    </style>
+</head>
+<body>
+    <div>
+        <p>p</p>
+        <p id="p">#p</p>
+        <p class="p">.p</p>
+        <p title="p">[title] / p[title] / [title="p"]</p>
+        <p id="a1">id^=a</p>
+        <p id="a2">id^=a</p>
+        <p id="a3">id^=a</p>
+    </div>
+
+    <div>
+        <a>div a</a>
+        <p id="p1">div #p1</p>
+        <a href="#p" id="mouse">#mouse:hover</a>
+    </div>
+
+    <div>
+        <input type="checkbox"><span>[type="checkbox"]:checked+span</span>
+    </div>
+</body>
+</html>

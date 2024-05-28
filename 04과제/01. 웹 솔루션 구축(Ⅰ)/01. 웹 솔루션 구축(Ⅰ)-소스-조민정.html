@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS종합 실습2</title>
+    <style>
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        body{
+            margin: 0;
+            /* height: 3000px; */
+        }
+        a:link{
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .fixed-top{
+            font-size: 0;
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .fixed-top .left-a{
+            float: left;
+            background: #84C639;
+            padding: 8px 58px 13px 58px;
+        }
+        .fixed-top .left-a a{
+            font-size: 20px;
+        }
+        .fixed-top .back-black{
+            background: black;
+            color: white;
+        }
+        .fixed-top .search{
+            padding: 3px 3px 3px 95px;
+            float: left;
+        }
+        .fixed-top .search input[type=text]{
+            height: 35px;
+            width: 290px;
+        }
+        .fixed-top .search input[type=submit]{
+            background: #FA1818;
+            border: 1px solid #FA1818;
+            width: 40px;
+            height: 40px;
+            transition: all 1s;
+        }
+        .fixed-top .search input[type=submit]:hover{
+            background: #84C639;
+            border: 1px solid #84C639;
+        }
+        .fixed-top .cart{
+            float: left;
+            padding: 14px 3px 14px 45px;
+        }
+        .fixed-top .cart > span{
+            font-size: 14px;
+            padding: 8px 12px;
+            border: 1px solid #84C639;
+        }
+        .fixed-top .cart > span > img{
+            vertical-align: middle;
+            padding-left: 5px;
+        }
+        .fixed-top .login{
+            float: left;
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 130px;
+            padding-top: 13px;
+        }
+        .fixed-top .login > span{
+            /* border: 1px solid red; */
+            padding: 0 57px 13px 57px;
+            box-sizing: border-box;
+            background: black;
+        }
+        .fixed-top .login > ul{
+            display: none;
+            padding: 0 0 10px 0;
+            margin: 12.5px 0 0 0;
+        }
+        .fixed-top .login > ul li{
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+        }
+        .fixed-top .login > ul li > a{
+            color: gray;
+            font-size: 14px;
+        }
+        .fixed-top .login > span:hover + ul{
+            display: block;
+            background: white;
+        }
+
+        .fixed-top .contact{
+            background: #FA1818;
+            text-align: center;
+            height: 47px;
+        }
+        .fixed-top .contact > a{
+            font-size: 22px;
+            line-height: 47px;
+            font-weight: 600;
+        }
+
+
+
+        header{
+            margin: 20px 50px;
+            padding-top: 50px; 
+        }
+        header .head{
+            float: left;
+            margin-right: 120px;
+        }
+        header .head > p{
+            margin: 0;
+            color: #FA1818;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        header .head > h1{
+            margin: -10px 0 0 0;
+            font-size: 55px;
+        }
+        header .item{
+            float: left;
+            margin-right: 100px;
+        }
+        header .item > p{
+            display: inline-block;
+            font-size: 14px;
+            margin: 40px 10px;
+            transition: all 0.5s;
+        }
+        header .item > .p:hover{
+            color: red;
+        }
+        header .phone-email{
+            float: left;
+        }
+        header .phone-email > p{
+            display: inline-block;
+            font-size: 14px;
+            margin: 40px 10px;
+        }
+
+
+
+        .product{
+            background: #84C639;
+            padding: 15px 50px;
+        }
+        .product > div{
+            display: inline-block;
+            margin: 0 8px;
+            font-size: 14px;
+        }
+        .product > div.white{
+            color: white;
+            transition: all 0.5s;
+        }
+        .product > div.white:hover{
+            color: red;
+        }
+
+
+
+        .banner nav{
+            float: left;
+            width: 20%;
+        }
+        .banner nav > ul{
+            border-top: 1px solid #B58F62;
+            list-style: none;
+            width: 250px;
+            margin: 0;
+            padding-left: 0;
+        }
+        .banner nav > ul > li{
+            padding: 10px 0 10px 40px;
+            font-size: 14.5px;
+        }
+        .banner nav > ul > li:hover{
+            background: #84C639;
+            color: white;
+        }
+
+
+        .banner .f-left{
+            float: left;
+            width: 80%;
+        }
+        .banner .f-left .back{
+            background-image: url(https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/16.jpg);
+            background-size: cover;
+            width: 100%;
+            height: 300px;
+        }
+        .banner .f-left .back > h3{
+            background: white;
+            color: #FA1818;
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 400;
+            padding: 10px 20px;
+            margin: 110px 0 0 270px;
+        }
+        .banner .f-left .banner-t > h3{
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        .banner .f-left .banner-t > p{
+            margin: 0 auto;
+            border-bottom: 2.5px solid #FA1818;
+            width: 80px;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        
+        .banner .f-left .banner-t .banner-item > h4{
+            font-size: 25px;
+        }
+        .banner .f-left .banner-t .banner-item .item{
+            display: inline-block;
+            border: 1px solid #BEBEBE;
+            padding: 8px;
+            width: 21.5%;
+            margin-right: 10px;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm{
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #D7D7D7;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm .it{
+            text-align: left;
+            font-size: 12px;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm .money{
+            text-align: left;
+            font-size: 15px;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm .price{
+            display: inline-block;   
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm .sale{
+            display: inline-block;
+            text-decoration: line-through;
+        }
+        .banner .f-left .banner-t .banner-item .item-sm .red-box{
+            display: inline-block;
+            font-size: 14px;
+            border: 1px solid #FA1818;
+            background: #FA1818;
+            color: white;
+            padding: 7px 35px;
+            margin-bottom: 15px;
+            transition: all 1s;
+        }
+        .banner .f-left .banner-t .banner-item .item:hover{
+            .red-box{
+                border: 1px solid #84C639;
+                background: #84C639;
+            }
+        }
+
+
+
+        .newsletter{
+            font-size: 0;
+            background: #FA1818;
+            margin-top: 80px;
+            padding: 30px;
+            text-align: center;
+        }
+        .newsletter > h4{
+            display: inline-block;
+            color: white;
+            font-size: 18px;
+            margin-right: 30px;
+        }
+        .newsletter > input[type=text]{
+            height: 40px;
+            width: 450px;
+            background: #FA1818;
+            border: 1px solid white;
+            color: white;
+            
+        }
+        .newsletter > input[type=submit]{
+            height: 44px;
+            width: 150px;
+            background: white;
+            border: 1px solid white;
+            color: #FA1818;
+        }
+
+
+
+        footer{
+            background: #1f1f1f;
+            font-size: 0;
+            padding: 0 40px;
+        }
+        footer .footer-box{
+            /* border: 1px solid white; */
+            display: inline-block;
+            width: 25%;
+            padding: 25px 0;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        footer .footer-box > h5{
+            color: white;
+            font-size: 17px;
+            padding-left: 40px;
+        }
+        footer .footer-box > ul{
+            list-style-type: none;
+        }
+        footer .footer-box > ul > li{
+            display: inline-block;
+            font-size: 14px;
+            color: #999;
+            padding: 10px 0;
+            transition: all 0.5s;
+        }
+        footer .footer-box > ul > li > span{
+            margin-right: 10px;
+            font-weight: bold;
+            color: white;
+        }
+        footer .footer-box > ul > .hov:hover{
+            color: white;
+        }
+        footer .twitter > li, footer .twitter .green{
+            margin: 0;
+        }
+        footer .twitter .green{
+            color: #84C639;;
+        }
+        footer .twitter strong{
+            color: white;
+        }
+
+
+        footer .footer-grids{
+            margin-top: 20px;
+        }
+        footer .footer-grids .payments{
+            /* border: 1px solid red; */
+            display: inline-block;
+            font-size: 15px;
+            color: #84C639;
+            font-weight: 600;
+            vertical-align: top;
+            margin: 0 50px 70px 35px;
+        }
+        footer .footer-grids .connect{
+            /* border: 1px solid red; */
+            display: inline-block;
+            font-size: 15px;
+            color: white;
+            font-weight: 600;
+        }
+        footer .footer-grids .connect > p{
+            margin: 0;
+        }
+        footer .footer-grids .connect .circle{
+            font-size: 40px;
+            margin-top: 12px;
+        }
+       
+
+        footer .end{
+            border-top: 1px solid #999;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+            padding: 60px 0;
+        }
+        footer .end > strong{
+            color: white;
+        }
+
+
+
+        .fixed-right{
+            /* border: 1px solid red; */
+            width: 70px;
+            height: 300px;
+            position: fixed;
+            top: 70px;
+            left: 100%;
+            transform: translateX(-100%);
+            padding: 10px;
+            background: black;
+            border-radius: 10px 0 0 10px;
+            text-align: center;
+        }
+        .fixed-right > div{
+            margin: 25px 0;
+            color: #999;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .fixed-right > div.a{
+            border-bottom: 1px solid #999;
+            padding-bottom: 25px;
+        }
+        .fixed-right > div.b{
+            margin: 27.5px 0;
+        }
+        .fixed-right > div.b > img{
+            /* 이미지 투명도 조절 */
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fixed-top clearfix">
+        <div class="left-a">
+           <a href="#">Today's special Offers!</a>
+        </div>
+        <div class="search back-black">
+            <input type="text" placeholder=" Search a product...">
+            <input type="submit" value=" ">
+        </div>
+        <div class="cart back-black">
+            <span>
+                View Your Cart
+                <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/cart.png">
+            </span>
+        </div>
+        <div class="login back-black">
+            <span>
+                ●
+            </span>
+            <ul>
+                <li><a href="#">Login</a></li><br>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+
+
+    <div class="fixed-right">
+            <div class="a">>></div>
+            <div class="b">→<br>Back</div>
+            <div class="b">⇓<br>Download</div>
+            <div class="b">
+                <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/cart.png">
+                <br>Buy</div>
+        </div>
+    </div>
+  
+    
+    <header class="clearfix">
+        <div class="head">
+            <p>GROCERY</p>
+            <h1>STORE</h1>
+        </div>
+        <div class="item">
+            <p class="p">
+                Evernts
+            </p>
+            <p>/</p>
+            <p class="p">
+                About US
+            </p>
+            <p>/</p>
+            <p class="p">
+                Best Deals
+            </p>
+            <p>/</p>
+            <p class="p">
+                Services
+            </p>
+        </div>
+        <div class="phone-email">
+            <p>(+0123) 234 567</p>
+            <p>store@grocery.com</p>
+        </div>
+    </header>
+
+    <div class="product">
+        <div class="white">Home</div>
+        <div>|</div>
+        <div>Households</div>
+    </div>
+
+    <div class="banner clearfix">
+        <nav>
+            <ul>
+                <li>Branded Foods</li>
+                <li>Households</li>
+                <li>Veggies & Fruits</li>
+                <li>Kitchen</li>
+                <li>Short Codes</li>
+                <li>Beverages</li>
+                <li>Pet Food</li>
+                <li>Frozen</li>
+                <li>Bread & Bakery</li>
+            </ul>
+        </nav>
+
+        <div class="f-left">
+            <div class="back">
+                <h3>Best Deals For New Products</h3>
+            </div>
+
+            <div class="banner-t">
+                <h3>Household Products</h3>
+                <p>_</p>
+                <section class="banner-item">
+                    <h4>CLEANING</h4>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/17.png">
+                            <p class="it">Dishwash Gel, Lemon (1.5 Ltr)</p>
+                            <div class="money">
+                                <p class="price">$8.00</p>
+                                <p class="sale">$10.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/18.png">
+                            <p class="it">Dish Wash Bar (500 Gm)</p>
+                            <div class="money">
+                                <p class="price">$2.00</p>
+                                <p class="sale">$4.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/19.png">
+                            <p class="it">Air Freshener (50 Gm)</p>
+                            <div class="money">
+                                <p class="price">$3.00</p>
+                                <p class="sale">$5.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/20.png">
+                            <p class="it">Toilet Cleaner Expert (1 Ltr)</p>
+                            <div class="money">
+                                <p class="price">$6.00</p>
+                                <p class="sale">$7.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="banner-item">
+                    <h4>UTENSILS</h4>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/21.png">
+                            <p class="it">Princeware Packaging Container Pack (6 No's)</p>
+                            <div class="money">
+                                <p class="price">$8.00</p>
+                                <p class="sale">$10.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/22.png">
+                            <p class="it">Signoraware Container Center Press (900 Ml)</p>
+                            <div class="money">
+                                <p class="price">$5.00</p>
+                                <p class="sale">$8.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                            <div class="item-sm">
+                            <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/23.png">
+                            <p class="it">Ship Stainless Steel Sauce Pan Single (1 Pc)</p>
+                            <div class="money">
+                                <p class="price">$6.00</p>
+                                <p class="sale">$8.00</p>
+                            </div>
+                            <div class="red-box">ADD TO CART</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h4>
+            Sign Up For Our Newsletter
+        </h4>
+        <input type="text" placeholder=" Email">
+        <input type="submit" value="SUBSCRIBE NOW">
+    </div>
+
+    <footer>
+        <div class="footer-box">
+            <h5>INFORMATION</h5>
+            <ul>
+                <li class="hov"><span>></span> Events</li><br>
+                <li class="hov"><span>></span> About US</li><br>
+                <li class="hov"><span>></span> Best Deals</li><br>
+                <li class="hov"><span>></span> Services</li><br>
+                <li class="hov"><span>></span> Short Codes</li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h5>POLICY INFO</h5>
+            <ul>
+                <li class="hov"><span>></span> FAQ</li><br>
+                <li class="hov"><span>></span> Privacy</li><br>
+                <li class="hov"><span>></span> Terms Of Use</li><br>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h5>INFORMATION</h5>
+            <ul>
+                <li class="hov"><span>></span> Pet Food</li><br>
+                <li class="hov"><span>></span> Frozen Snacks</li><br>
+                <li class="hov"><span>></span> Kitchen</li><br>
+                <li class="hov"><span>></span> Branded Foods</li><br>
+                <li class="hov"><span>></span> Households</li>
+            </ul>
+        </div>
+        <div class="footer-box twitter">
+            <h5>TWITTER POSTS</h5>
+            <ul>
+                <li>
+                    <p class="green">01 day ago</p>
+                    <li>
+                        Non numquam <strong>http://sd.ds/13jklf#</strong> eius modi tempora incidunt ut labore et <strong>http://sd.ds/1389kjklf#quo</strong> nulla.
+                    </li>
+                </li><br>
+                <li>
+                    <p class="green">02 day ago</p>
+                    <li>
+                        Con numquam <strong>http://fd.uf/56hfg#</strong> eius modi tempora incidunt ut labore et <strong>http://fd.uf/56hfg#quo</strong> nulla.
+                    </li>
+                </li><br>
+            </ul>
+        </div>
+
+        <div class="footer-grids">
+            <div class="payments">
+                <p>100% Secure Payments</p>
+                <img src="https://p.w3layouts.com/demos/july-2016/07-07-2016/grocery_store/web/images/card.png">
+            </div>
+            <div class="connect">
+                <p>Connect With Us</p>
+                <p class="circle">○○○○○</p>
+            </div>
+        </div>
+        
+        <div class="end">
+            © 2016 Grocery Store. All rights reserved | Design by <strong>W3layouts</strong>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 과제1</title>
+    <style>
+        div.wrap{
+            /* border: 1px solid red; */
+
+            /* %사용 시 축소할 때 크기가 줄어들지 않음 */
+            width: 1100px;
+            margin: 30px auto;
+        }
+
+        .wrap .section{
+            /* border: 1px solid blue; */
+
+            display: inline-block;
+            box-sizing: border-box;
+            width: 50%;
+            vertical-align: top;
+        }
+
+        .wrap .section.right{
+            text-align: right;
+        }
+
+        .wrap .section > article{
+            margin: 10px;
+        }
+
+        .wrap .section img{
+            width: 100%;
+        }
+
+        .wrap .section .half{
+            width: 50%;
+        }
+
+        .wrap .section .box{
+            background: #292d33;
+            color: white;
+            padding: 40px 35px;
+        }
+        .wrap .section .box .text{
+            font-size: 43px;
+        }
+        .wrap .section .box .link{
+            margin: 20px 0;
+            font-size: 20px;
+            font-weight: lighter;
+        }
+        a:link{
+            color: white;
+        }
+        
+
+        div.back{
+            color: #e4d2c0;
+            width: 300px;
+            height: 100%;
+            background: #e4d2c0;
+            
+            /* relative 사용 시 잘려서 나옴(뒤에 겹쳐서 나오지 않음) */
+            position: absolute;
+            z-index: -1;
+
+            top: 0;
+            /* 
+            축소시켜도 위치가 움직이지 않음
+            (40%일 시 첫 화면은 가운데에 있지만 확대를 할 시 위치 변경됨) 
+            */
+            left: 50%;
+
+            /* 배경이 가운데로 옮겨줌 */
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        배경
+    </div>
+    <div class="wrap">
+        <section class="section right">
+            <article>
+                <img src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/4583c5e5778759d5bf354095/dfggdf-min.jpg">
+            </article>
+            <article>
+                <img class="half" src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/ea6de3a355c35c3fb5e2e8fb/gfgg.jpg">
+            </article>
+        </section><section class="section">
+            <article>
+                <img class="half" src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/fe2b4f4f73b2545cb746601b/spirituality-religion-hands-folded-prayer-holy-bible-church-concept-faith_1150-148781.jpg">
+            </article>
+            <article class="box">
+                <div class="text">
+                    We believe a community of diversity and acceptance starts in a safe and inclusive place of worship.
+                </div>
+                <div class="link">
+                    Images from <a href="#">Freepik</a>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

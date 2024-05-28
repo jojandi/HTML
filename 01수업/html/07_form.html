@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- action : 보낼 곳 / method : 보내는 방식(get, post) -->
+    <!-- action이 없을 시 기본값 : 현재 페이지 -->
+    <!-- method이 없을 시 기본값 : get(get일 시 생략 가능) -->
+    <!-- get : 주소창에 정보가 보임 <-> post : 주소창에 정보가 안 보임 -->
+    <form action="" method="get">
+        button : <input type="button" value="버튼"> <br>
+        checkbox : <input type="checkbox" value="1" checked="checked"> 김밥
+                   <input type="checkbox" checked> 라면 <br>
+                   <!-- value : 서버로 전송됨 -->
+                   <!-- checked : 선택이 되어있게 함 -->
+
+        color : <input type="color"> <!-- 중요X -->
+        date : <input type="date"><br> <!-- 중요X -->
+        
+        file : <input type="file"><br>
+        hidden : <input type="hidden" value="비밀"><br>
+        number : <input type="number"><br>
+        password : <input type="password" name="pw"><br>
+        radio : <input type="radio" name="gender" value="male">남
+                <input type="radio" name="gender" checked>여
+                <input type="radio" name="gender" checked>비공개<br>
+                <!-- radio : 하나만 선택할 수 있음(name이 같을 시) -->
+                <!-- chcked : 여러 개가 있을 시 마지막 선택지만 선택 됨 -->
+
+        text : <input type="text" ><br>
+        reset : <input type="reset"> <input type="reset" value="RESET"><br>
+                <!-- 해당 form 안에 있는 것만 초기화 됨 -->
+
+        submit : <input type="submit"> <input type="submit" value="회원가입">
+                 <!-- name이 있는 것을 action의 주소로 보냄 -->
+    </form>
+
+    <hr>
+    <form action="http://search.naver.com/search.naver" method="get">
+        <input type="text" name="query" placeholder="검색어를 입력해주세요.">
+        <!-- placeholder : 표시만 되어있음, 글씨를 지우면 보임-->
+        <input type="submit" value="naver">
+    </form>
+
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" value="검색" readonly>
+        <!-- value : 글이 적혀있음, 지울 수 있음 -->
+        <!-- readonly : 글씨 수정 불가 -->
+        <input type="submit" value="google">
+    </form>
+    <!-- form 안에 form이 있으면 안 됨, 동작이 이상해짐 -->
+
+
+    <hr>
+    <form>
+        <select name="dinner" disabled>
+            <option value="1">일식</option>
+            <option value="2">한식</option>
+            <option value="3">양식</option>
+            <option value="4" selected>분식</option>
+            <!-- slected : 선택되어있게 함, 여러개 일 시 마지막 것 선택 -->
+            <!--disabled : select 사용 불가 -->
+        </select>
+        <input type="submit" value="선택">
+    </form>
+
+    <hr>
+    <form>
+        <textarea name="text" rows="10" cols="30">미리 완성</textarea>
+        <!-- 여러줄 입력 가능 (text는 한 줄만)-->
+        <!-- rows : 10줄 입력 가능, cols : 30글자 입력 가능한 크기-->
+        <input type="submit" value="선택">
+    </form>
+</body>
+</html>

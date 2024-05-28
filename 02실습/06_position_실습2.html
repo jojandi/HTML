@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_실습2</title>
+    <style>
+        .background{
+            /* border: 1px solid red; */
+            /* width: 100%; */
+            height: 730px;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKpdOPFyIYd_fxRpJ8A6p92oNhm2v5FtgnEaazUFvbyw&s");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .box{
+            /* border: 1px solid red; */
+            background: rgba(255, 255, 255, 0.9);
+            width: 350px;
+            height: 100%;
+
+            position: relative;
+            top: 0;
+            left: 600px;
+
+            box-sizing: border-box;
+            text-align: center;
+            padding: 180px 0;
+        }
+
+        .fs18{
+            /* border: 1px solid red; */
+            font-size: 18px;
+        }
+        .link{
+            /* border: 1px solid red; */
+            font-size: 14px;
+        }
+
+        .head{
+            /* border: 1px solid red; */
+            font-family: monospace;
+            font-size: 33px;
+            padding: 20px 0;
+        }
+
+        a:link{
+            /*링크 폰트 색 바꾸기*/
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="box">
+            <p class="fs18 c1">
+                ABOUT US
+            </p>
+            <h1 class="head">
+                Industrial Solutions
+            </h1>
+            <p class="fs18 c2">
+                We’re your partner, but we’re also your advocate—every step of the way to satisfying your vision.
+            </p>
+            <a href="#" class="link">
+                READ MORE
+            </a>
+            
+        </div>
+    </div>
+</body>
+</html>

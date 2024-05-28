@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+}
+div.first{
+    /* border: 20px solid red; */
+    border-top: 5px solid red;
+    border-right: 10px solid #0000ff;
+    border-bottom: 15px solid #00ff00;
+    border-left: 20px solid rgba(255,0,0,0.5);
+
+    /* padding: 20px; 4면 적용*/
+    padding-top:50px;
+    padding-right:40px;
+    padding-bottom:30px;
+    padding-left:20px;
+
+    /* margin: 20px; */
+    margin: 30px 50px;
+    /*
+        4개 : 상, 우, 하, 좌
+        3개 : 상, 좌우, 하
+        2개 : 상하, 좌우
+        1개 : 상하좌우
+    */
+
+    /* width: 300px; */
+    width: 50%; /*50% : 콘텐츠의 넓이만 브라우저의 절반 크기(전체 크기완 관계 없음)*/
+    /* height: 50px; */
+    /*px : 브라우저의 크기와 관계없이 고정, % : 브라우저의 크키에 따라 달라짐*/
+}
+
+div.second{
+    border: 1px solid red;
+    margin: 20px auto; 
+    /*margin에 auto는 좌우 가운데 정렬을 뜻한다*/
+    width: 200px;
+}
+
+div.third{
+    border: 1px solid red;
+    border-radius: 20px;    /*모서리 둥굴게 깎기*/
+    max-width: 700px;   /*최대 길이*/
+    min-width: 600px;   /*최소 길이*/
+}
+
+div.fourth img{
+    border-width: 2px;
+    border-style: dotted;
+    border-color: navy;
+
+    width: 200px;
+    height: 200px;
+
+    /* 
+    margin: auto; 
+    이미지는 margin auto 적용 안 됨
+    */
+
+    border-radius: 50%;
+}
+
+div.talk{
+    width: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+div.talk.rigth{
+    border-radius: 15px 0 15px 15px;
+    margin-left: 200px;
+}
+div.talk.left{
+    border-radius: 0 15px 15px 15px;
+}
+
+#p, #c1, #c2{
+    border: 1px solid red;
+}
+#p{
+    margin: 20px;
+}
+#c1{
+    margin: 20px;
+}
+#c2{
+    margin: 20px;
+}
+
+div.box{
+    border: 1px solid red;
+    margin: 10px;
+    padding: 50px;
+    width: 50%;
+}
+div.box.border{
+    box-sizing: border-box; /*border까지 width로 잡아줌*/
+}

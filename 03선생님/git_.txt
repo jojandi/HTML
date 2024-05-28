@@ -1,0 +1,86 @@
+
+git, svn, cvs
+형상관리, 협업툴
+저장소에 파일을 버전별로 저장 - 히스토리가 남는다
+
+서버 / 클라이언트
+서버에 저장 / 클라이언트가 서버로 요청(업로드,다운로드)
+
+github : git server를 설치해서 운영하는 업체
+
+그냥 용어에는 *
+* repository : 저장소
+
+* staging : 변경된 파일을 commit 대상으로 지정
+add : staging하는 명령어
+	git add .
+commit : staging된 파일들을 확정 : 내 컴퓨터에서만!
+	git commit -m "뭘 수정했나"
+push : commit된 파일들을 원격 저장소로 업로드
+	git push origin main
+
+fetch : 저장소의 정보로 업데이트
+	git fetch
+pull : 저장소의 변경된 파일을 다운로드
+
+clone : 원격 저장소의 모든 내용을 내 저장소로 다운로드
+
+branch : 원격 저장소를 복사해서 push가 따로 관리되는 복사본
+checkout : 브렌치 변경
+
+fork : 복사는 복사인데 push가 즉시 반영되지 않음
+	pull request 요청을 따로 보내고 승인권한자가 승인해야 push가 완료됨
+pull request : fork의 내용을 승인 - 저장소에 반영됨
+
+merge : branch간 병합
+
+* conflict : 충돌 상황, push가 안되므로 conflict해결하고 push해야 함
+
+<div id="test">abc</div>
+<div id="test2">1234</div> <-- 이거 수정 같이 함
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+<div id="test2">12345</div> 남의 소스
+=========================
+<div id="test2">234</div>	내 소스
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+conflict 해결에 가장 쉬운 방법
+일단 내꺼 지우기
+push : 버전이 정상적으로 up
+내꺼 다시 살려서
+push
+
+--------------
+사용법
+--------------
+github 가입 및 로그인
+repository 만들기
+만들어진 페이지 오른쪽 위 파란 Code 클릭 후 주소 복사
+토큰 복사(오른쪽 위 아이콘 클릭 > settings > 맨아래...)
+
+
+소스트리 설치
+bitbucket 나오면 건너뛰기
+Mercurial 나오면 체크해제
+이름, 이메일(표시용) 적기
+SSH 나오면 아니오
+
+상단 3번째 Clone 클릭
+첫번째 input에 git 주소 복사한거 입력(다른데 클릭하면 검사해줌)
+두번째 input옆에 버튼 눌러서 다운로드할 폴더 만들기
+클론 클릭
+
+오른쪽 위 메뉴 중 원격 > 편집 > https://토큰@github....
+아까 복사한 토큰 넣기(자동 로그인 처리)
+
+파일을 새로 만든 폴더에 복사하거나 편집해서 
+왼쪽 파일상태 > 스테이지에 올리기 > 커밋 > fetch > pull > push
+
+도중에 라디오버튼 3개 나오면 아래 체크박스 선택 후 확인
+pull 하는 중 긴 오류 메세지 나올때
+중간에 git config --global pull.rebase false 이런 글씨가 있다면
+소스트리 상단 오른쪽 메뉴 중 터미널 클릭해서 검은화면에
+git config --global pull.rebase false를 마우스 오른쪽 버튼 > 붙여넣기(paste) > 엔터 > 닫기 > 다시 pull
+
+github 페이지에서 push한 파일 확인

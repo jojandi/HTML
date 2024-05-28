@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            웹폰트 다운로드
+            font-family에 적은 글씨로 사용 가능
+        */
+        @font-face {
+            font-family: 'HSSanTokki20-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .size{
+            /* font-size: 32px; */
+            font-size: 2em;
+        }
+
+        .webfont{
+            font-family: 'HSSanTokki20-Regular';
+            color: white;
+            background: rgb(255, 167, 167);
+        }
+        #webfont1{
+            font-family: "Courier New";
+            color: black;
+        }
+
+        .weight .fw-100{
+            font-weight: 100;
+        }
+
+        /*기본값*/
+        .weight .fw-500{    
+            font-weight: 500;
+        }
+        .weight .fw-900{
+            font-weight: 900;
+        }
+
+        /*100~900을 벗어나면 기본값으로 설정*/
+        .weight .fw-2000{   
+            font-weight: 2000;
+        }
+
+        .height{
+            line-height: 200%;
+        }
+        .height2{
+            border: 1px solid black;
+            width: 100px;
+            height: 50px;
+
+            /*
+            줄간격을 조절하는 css가 글씨가 중앙에 나오는 특성을 이용,
+            부모와 같은 height값을 주면 수직방향 중앙 정렬이 됨 (단위가 px일시)
+            */
+            line-height: 50px;  
+        }
+
+        .center{
+            text-align: center;
+        }
+        .right{
+            text-align: right;
+        }
+
+        .underline{
+            text-decoration: underline;
+        }
+        .through{
+            text-decoration: line-through;
+        }
+
+        input[type=checkbox]:checked + span{
+            text-decoration: line-through;
+        }
+
+        .text{
+            border: 1px solid red;
+            width: 200px;
+        }
+
+        
+        .text.nowrap{
+        /*
+            inline 요소를 자동 줄바꿈 하지 않는다
+            케러셀 등에서 쓰임
+        */
+            white-space: nowrap;
+
+        /*
+            overflow로 가려진 글씨가 있을 때 ...을 붙여준다
+            (overflow: hidden 필요)
+        */
+            text-overflow: ellipsis;
+        
+            overflow: hidden;
+        }
+
+        .text.word-wrap{
+            /*
+                한 단어로 인식하는 경우 넘쳐도 자동 줄바꿈이 되지 않음
+                -> break-word 적용 시 
+                너비를 벗어나지 않게 자동 줄바꿈 해 줌
+                원래 자동 줄바꿈은 유지 됨
+            */
+            word-wrap: break-word;
+        }
+
+        .text.word-break{
+            /*
+                word-wrap: break-word;와 비슷
+                원래 자동 줄바꿈 대상을 무시함
+            */
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>h1</h1>
+    <span class="size"><strong>h1</strong>-fake</span>
+
+    <div class="webfont">
+        토끼가 강한 이유는 깡과 총이 있기 때문입니다.
+        <div>
+            안쪽 div -> font는 상속 된다.
+        </div>
+        <div id="webfont1">
+            폰트 재설정
+        </div>
+    </div>
+
+    <div class="weight">
+        <div class="fw-100">font weight 100</div>
+        <div class="fw-500">font weight 500</div>
+        <div class="fw-900">font weight 900</div>
+        <div class="fw-2000">font weight 2000</div>
+    </div>
+
+    <div class="height">
+        첫번째 줄<br>
+        두번째 줄
+    </div>
+    <div class="height2">
+        read more
+    </div>
+
+    <h1 class="center">
+        가운데 정렬
+    </h1>
+    <h2 class="right">
+        오른쪽 정렬
+    </h2>
+
+    <!--
+        a tag는 text-align: center 적용 X (inline요소이기 때문에)
+        -> block요소로 감싸주면 가능(div 등)
+    -->
+    <div style="text-align: center;">
+        <a href="#">a link</a>
+    </div>
+    
+    <div>
+        <span class="underline">
+            text decoration - underline
+        </span><br>
+        <span class="through">
+            text decoration - line through
+        </span>
+    </div>
+
+    <div>
+        <input type="checkbox"><span>오저뭐?</span><br>
+        <input type="checkbox"><span>복습</span><br>
+        <input type="checkbox"><span>일찍 자기</span><br>
+    </div>
+
+    <div class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptatem non corrupti fugit suscipit ex officia commodi ipsa. Aspernatur cumque optio commodi ex! Quasi voluptatum similique cupiditate explicabo ab natus.
+    </div>
+
+    <!-- 보이지 않는 글들을 사용자에게 전달하기 위해 title 사용 -->
+    <div class="text nowrap" title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptatem non corrupti fugit suscipit ex officia commodi ipsa. Aspernatur cumque optio commodi ex! Quasi voluptatum similique cupiditate explicabo ab natus.">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptatem non corrupti fugit suscipit ex officia commodi ipsa. Aspernatur cumque optio commodi ex! Quasi voluptatum similique cupiditate explicabo ab natus.
+    </div>
+
+    <div class="text">
+        alkdjklfjkgjkelrngklfjglkfdjgfdjgopfkjgkldfgklrgklnglkfj glkjvpckjvfdlgksgkflgkghfhthsrt
+    </div>
+    <div class="text word-wrap">
+        alkdjklfjkgjkelrngklfjglkfdjgfdjgopfkjgkldfgklrgklnglkfj glkjvpckjvfdlgksgkflgkghfhthsrt
+    </div>
+    <div class="text word-break">
+        alkdjklfjkgjkelrngklfjglkfdjgfdjgopfkjgkldfgklrgklnglkfj glkjvpckjvfdlgksgkflgkghfhthsrt
+    </div>
+</body>
+</html>

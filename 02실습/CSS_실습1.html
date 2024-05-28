@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS종합 실습1</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        div.a1st{
+            width: 100%;
+            height: 750px;
+            /* border: 1px solid red; */
+            background-image: url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/9b22e6f1444b5ae785f3a267/pexelsphoto3326103.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .a1st .top{
+            display: flex;
+            justify-content: space-between;
+
+            padding: 20px 10px;
+            border-bottom: 1px solid white;
+        }
+        .a1st .top input[type=text]{
+            height: 36px;
+            width: 200px;
+            /* transparent : 투명하게 함 */
+            background: transparent;
+            border: 1px solid white;
+            font-size: 17px;
+        }
+        .a1st .top .box{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .a1st .text > h1{
+            margin: 0;
+        }
+        .a1st .text .a{
+            background: white;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            display: inline-block;
+
+            position: relative;
+            top: 400px;
+            left: 0;
+        }
+        .a1st .text .b{
+            background: #f1c50e;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            display: inline-block;
+
+            position: relative;
+            top: 390px;
+            left: 0;
+        }
+
+
+        .a2nd{
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            height: 600px;
+        }
+        .a2nd .yellow2{
+            color: #f1c50e;
+            background: #f1c50e;
+            position: absolute;
+            z-index: -1;
+            width: 550px;
+            height: 620px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .a2nd .text2{
+            border: 5px solid black;
+            background: white;
+            box-sizing: border-box;
+            width: 400px;
+            height: 280px;
+            position: absolute;
+            top: 180px;
+            left: 130px;
+            text-align: left;
+            padding: 20px 40px
+        }
+        .a2nd .img2{
+            background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/e07fd7349a87546e950fb324/photo1564305564045c62d40dd0123.jpg);
+            background-size: cover;
+            width: 411px;
+            height: 548px;
+            position: absolute;
+            top: 40px;
+            left: 650px;
+        }
+
+
+        .a3rd{
+            margin-top: 130px;
+        }
+        .a3rd .img3-1{
+            display: inline-block;
+            width: 293px;
+            height: 311px;
+            background-image: url(https://images01.nicepage.com/a2/fc/a2fc4ef890f44fa0a9bb7787ce17008d.jpeg);
+            background-size: cover;
+            margin-right: 33px;
+        }
+        .a3rd .text3{
+            vertical-align: top;
+            display: inline-block;
+            width: 280px;
+            height: 311px;
+            box-sizing: border-box;
+            border: 5px solid black;
+            padding: 30px 30px;
+        }
+        .a3rd .text3 > h2{
+            font-weight: 500;
+        }
+        .a3rd .img3-2{
+            display: inline-block;
+            width: 293px;
+            height: 311px;
+            background-image: url(https://images01.nicepage.com/62/43/6243854162c536333ab218a58996077f.jpeg);
+            background-size: cover;
+            margin: 0 33px;
+        }
+
+
+        .a4th{
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/992eb4a786e9521ea39ea995/pexelsphoto940302.jpeg);
+            background-size: cover;
+            width: 100%;
+            height: 765px;
+            margin-top: 50px;
+            position: relative;
+        }
+        .a4th > .b4th{
+            position: absolute;
+            top: 230px;
+            left: 0;
+        }
+        .a4th h1{
+            font-weight: 500;
+        }
+        .a4th p{
+            width: 730px;
+        }
+
+
+        .a5th{
+            margin-top: 50px;
+            position: relative;
+
+        }
+        .a5th > .yellow5{
+            width: 100%;
+            height: 250px;
+            background: #f1c50e;
+            position: absolute;
+            z-index: -1;
+            top: 120px;
+            left: 0;
+        }
+        .a5th > .img5-1{
+            display: inline-block;
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/b997f5453a025796b7e011f6/pexelsphoto3659862.jpeg);
+            background-size: cover;
+            /* 이미지를 내가 원하는 부분이 나오도록함 */
+            background-position: 50% 100%;
+            width: 500px;
+            height: 488px;
+
+            margin: 0 20px 0 60px;
+        }
+        .a5th > .img5-2{
+            display: inline-block;
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/89f0b40da8d05b4088f24d63/pexelsphoto704569.jpeg);
+            background-size: cover;
+            background-position: 100% 45%;
+            width: 500px;
+            height: 488px;
+        }
+        .a5th > .text5{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .a5th > .text5 > h1{
+            font-weight: 500;
+        }
+        .a5th > .text5 > p{
+            margin: 0 auto;
+            margin-bottom: 40px;
+            width: 740px;
+            font-size: 17px;
+        }
+        .a5th > .text5 > a{
+            color: white;
+            background: black;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 25px
+        }
+
+
+        .a6th{
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .a6th > .img6-1{
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/e5a2d57a68bc5de4b52746a3/pexelsphoto3756523.jpeg);
+            background-size: cover;
+            background-position: 50% 50%;
+            width: 407px;
+            height: 461px;
+        }
+        .a6th > .text6{
+            box-sizing: border-box;
+            width: 407px;
+            height: 461px;
+            border: 5px solid black;
+            padding: 35px;
+            text-align: center;
+        }
+        .a6th > .text6 > h2{
+            font-size: 35px;
+            font-weight: 500;
+            margin: 0;
+        }
+        .a6th > .text6 > h4{
+            font-size: 18px;
+            font-weight: 200;
+            margin: 0;
+        }
+        .a6th > .text6 > .big{
+            font-size: 40px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        .a6th > .text6 > .pp{
+            font-size: 18px;
+            margin: 20px 5px;
+        }
+        .a6th > .text6 > h5{
+            font-size: 18px;
+            font-weight: 500;
+            margin: 50px 0 0 0;
+        }
+        .a6th > .img6-2{
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/fcee991985085d4093370a3d/pexelsphoto3756525.jpeg);
+            background-size: cover;
+            background-position: 32% 50%;
+            width: 407px;
+            height: 461px;
+        }
+
+
+        .a7th{
+            background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/3cb19967a4645debbcf2c90a/pexelsphoto3831823.jpeg);
+            background-size: cover;
+            background-position: 50% 50%;
+            width: 100%;
+            height: 700px; 
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+        }
+        .a7th > .ab{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .a7th .icon{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .a7th h1{
+            font-weight: 500;
+        }
+
+
+        footer{
+            background: #333333;
+            text-align: center;
+            padding: 40px;
+        }
+        footer > p{
+            margin: 0 auto;
+            width: 417px;
+            color: white;
+            font-size: 14px;
+        }
+        footer > .p2{
+            font-size: 13px;
+            margin-top: 80px;
+        }
+        footer > .p2 > a{
+            color: #adcce9;
+        }
+    </style>
+</head>
+<body>
+    <div class="a1st">
+        <div class="top">
+            <input type="text" placeholder="Search">
+            <div class="box"> 三 </div>
+        </div>
+        <div class="text">
+            <h1 class="a">YOUR FAVORITE FOOD</h1><br>
+            <h1 class="b">MAKE IT GOOD</h1>
+        </div>
+    </div>
+
+    <div class="a2nd">
+        <div class="yellow2">
+            배경
+        </div>
+        <div class="text2">
+            <h1>Cafe Food Menu</h1>
+            <p>
+                All of our food is prepared by our team of trained kitchen staff from the sealed glass kitchen where you can see your food being made, without risk of little paws getting involved.
+            </p>
+        </div>
+        <div class="img2">
+        </div>
+    </div>
+    
+    <div class="a3rd">
+        <div class="img3-1"></div>
+        <div class="text3">
+            <h2>Have a healthy afternoon snack</h2>
+            <p>
+                The majority of people in the working world are likely familiar with the mid-afternoon slump.
+            </p>
+        </div>
+        <div class="img3-2"></div>
+        <div class="text3">
+            <h2>Include lots of fibre in your diet</h2>
+            <p>
+                Fibre is known to help aid with digestion. However, that’s not its only benefit.
+            </p>
+        </div>
+    </div>
+
+    <div class="a4th">
+        <div class="b4th">
+            <h1>Time to Make a Difference</h1>
+            <p>
+                Phasellus scelerisque arcu vestibulum tempor tempor. Donec vulputate leo et metus hendrerit bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In scelerisque nisl nec ornare euismod
+            </p>
+        </div>
+    </div>
+
+    <div class="a5th">
+        <div class="yellow5"></div>
+        <div class="img5-1"></div>
+        <div class="img5-2"></div>
+        <div class="text5">
+            <h1>Which is the tastiest food?</h1>
+            <p>
+                The world's most delicious food is not Massaman curry, as we suggested, but a meaty, spicy, gingery dish from west Sumatra. "There is no love sincerer than the love of food," George Bernard Shaw said. Judging by the number of amazing dishes out there, he was right.
+            </p>
+            <a href="#">READ MORE</a>
+        </div>
+    </div>
+
+    <div class="a6th">
+        <div class="img6-1"></div>
+        <div class="text6">
+            <h2>Restaurant</h2>
+            <h4>ORGANIC FARM</h4>
+            <p class="big">"</p>
+            <p class="pp">
+                We bring the season’s best mix of organic produce and hand-crafted farm products conveniently to your door by growing and partnering with local farms and artisans in your area.
+            </p>
+            <h5>- LOO HUDSO</h5>
+        </div>
+        <div class="img6-2"></div>
+    </div>
+
+    <div class="a7th">
+        <div class="ab">
+            <div class="icon">
+                <span>f</span>
+                <span>★</span>
+                <span>□</span>
+            </div>
+            <h1>Enjoy Morning Time</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p class="p1">
+            Sample text. Click to select the text box. Click again or double click to start editing the text.
+        </p>
+        <p class="p2">
+            <a href="#">Template</a> created with <a href="#">Nicepage</a>.
+        </p>
+    </footer>
+</body>
+</html>

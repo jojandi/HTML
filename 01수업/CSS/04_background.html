@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image1{
+            border: 1px solid red;
+            height: 250px;
+
+            /*
+                배경을 이미지로 바꾸기
+                기본값이 상하좌우로 반복
+            */
+            background-image: url("http://poiemaweb.com/img/bg/dot.png");
+
+            /*padding 영역까지 background-image 적용됨*/
+            padding: 20px;  
+            margin: 20px;
+        }
+        #image2{
+            height: 250px;
+            border: 1px solid red;
+            background-image: url("http://poiemaweb.com/img/bg/dot.png");
+            /* background-repeat: repeat-x;   -> repeat-x : 가로방향(x축)만 반복 */
+            /* background-repeat: repeat-y;   -> repeat-y : 세로방향(y축)만 반복 */
+            background-repeat: no-repeat;   /*이미지 반복 X*/
+        }
+        #image3{
+            height: 250px;
+            border: 1px solid red;
+            background-image: url("http://poiemaweb.com/img/bg/stock-photo-125979219.jpg");
+
+            /*background-size: 50% 100%;  
+                가로 세로 순으로 적는다. px도 가능, 원래 비율과 달라질 수 있음
+                하나만 쓰면 가로만 적용, 세로는 원본 비율에 맞게 자동설정*/
+            
+            /* 
+            background-size: cover;
+                지정된 width, height에 맞게 원본 비율을 유지하며 적용
+                이미지가 잘릴 수 있음
+                채워주는 것이 목적
+            */
+
+            /*
+            원본 비율 유지, 이미지가 잘리지 않게 함
+            배경이미지가 없는 영역이 있을 수 있음
+            남는 영역에 repeat 기본값 적용
+            */
+            background-size: contain;   
+            background-repeat: no-repeat;
+
+            background-position: center;    /*가운데 정렬*/
+        }
+        #image4{
+            height: 100px;
+            background-color: #688b3e; 
+        }
+    </style>
+</head>
+<body>
+    <div id="image1">
+        <h3>background-image</h3>
+    </div>
+
+    <div id="image2">
+        <h3>background-repeat</h3>
+    </div>
+    
+    <div id="image3">
+        <h3>background-size<br>
+            background-position
+        </h3>
+    </div>
+
+    <div id="image4">
+        <h3>background-color</h3>
+    </div>
+</body>
+</html>
