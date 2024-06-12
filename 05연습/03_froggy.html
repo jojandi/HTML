@@ -68,11 +68,6 @@
             animation-delay: 0.6s;
             animation-fill-mode: both;
         }
-        /* hover 상태 유지 어떻게 하지... */
-
-        .wrap-frog .frog .animate:hover{
-            animation-iteration-count: 1;
-        }
 
         @keyframes bounce{
             0%, 100%, 53%, 80%, 20% {
@@ -135,6 +130,48 @@
             background-size: 80% 80%;
         }
     </style>
+
+    <script>
+        window.onload = function(){
+            /*
+            // 각각의 개구리를 frog라는 변수에 넣음
+            let frog = document.querySelectorAll(".bg");
+            console.log(frog);
+
+            // 전체 개구리 click event
+            // frog가 배열임을 이용해서 for문 사용
+            function one(){
+                for(let i = 0; i < frog.length; i++){
+                    // animate라는 class의 존재 여부를 isone에 넣어줌(true, false)
+                    let isone = frog[i].classList.contains("animate");
+                    for(let j = 0; j < 25; j++){
+                        if(i == j){
+                            console.log('if 적용')
+                            if(isone == false){
+                                frog[j].classList.add("animate");
+                                console.log('STOP');
+                            } else{
+                                frog[j].classList.remove("animate");
+                                console.log('JUMP');
+                            }
+                        } else{
+                            console.log('else 적용');
+                        }
+                    }
+                }
+            }
+            for(let i = 0; i < frog.length; i++){
+                frog[i].addEventListener('click', one);
+            }
+            */
+
+            let frog = document.querySelectorAll(".frog");
+            for(let i = 0; i < frog.length; i++){
+                console.log(frog[i]);
+            }
+            // console.log(frog);
+        }
+    </script>
 </head>
 <body>
     <div class="wrap">
